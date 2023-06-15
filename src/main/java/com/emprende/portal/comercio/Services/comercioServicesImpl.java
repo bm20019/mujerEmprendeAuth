@@ -22,7 +22,7 @@ public class comercioServicesImpl implements comercioServices{
 			Optional<ComerciosModel> comercioOptional = comercioRepo.findById(codigo);
 			if(comercioOptional.isPresent()) {
 				ComerciosModel comercio = comercioOptional.get();
-				return new responseDto<ComerciosModel>("Comercio encontrado", comercio, responseDtoEnum.OK);
+				return new responseDto("Comercio encontrado", comercio, responseDtoEnum.OK);
 			} else {
 				rsp.setResponse("Comercio no encontrado", responseDtoEnum.NO_CONTENT);
 			}

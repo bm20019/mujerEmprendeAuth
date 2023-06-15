@@ -33,7 +33,7 @@ public class UsuariosModel implements Serializable{
     @Getter
     @Setter
     @Column(name = "correo")
-    private String username;
+    private String correo;
 
     @Getter
     @Setter
@@ -80,5 +80,4 @@ public class UsuariosModel implements Serializable{
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_comercio", referencedColumnName = "id_comercio")
     private ComerciosModel idComercio;
-
 }

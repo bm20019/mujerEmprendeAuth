@@ -4,7 +4,6 @@ import com.emprende.portal.comercio.Models.UsuariosModel;
 import com.emprende.portal.comercio.Services.usuariosServices;
 import com.emprende.portal.comercio.dto.responseDto;
 import com.emprende.portal.comercio.dto.responseDtoEnum;
-import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -5,5 +5,5 @@ import com.emprende.portal.comercio.dto.responseDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface usuariosRepository extends JpaRepository<UsuariosModel, Long> {
-    responseDto findByUsername(String username);
+    responseDto findByCorreo(String correo);
 }

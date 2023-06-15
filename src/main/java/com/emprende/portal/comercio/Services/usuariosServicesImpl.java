@@ -4,9 +4,8 @@ import com.emprende.portal.comercio.Models.UsuariosModel;
 import com.emprende.portal.comercio.Repository.usuariosRepository;
 import com.emprende.portal.comercio.dto.responseDto;
 import com.emprende.portal.comercio.dto.responseDtoEnum;
-import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -55,7 +54,7 @@ public class usuariosServicesImpl implements usuariosServices {
                 usuario.setApellidos(user.getApellidos());
                 usuario.setContacto(user.getContacto());
                 usuario.setCreated(user.getCreated());
-                usuario.setUsername(user.getUsername());
+                usuario.setCorreo(user.getCorreo());
                 usuario.setDireccion(user.getDireccion());
                 usuario.setNombres(user.getNombres());
                 usuario.setIdComercio(user.getIdComercio());
@@ -99,15 +98,15 @@ public class usuariosServicesImpl implements usuariosServices {
     public responseDto findByUsername(String username) {
         UsuariosModel userM = userRepo.findAll()
                 .stream()
-                .filter(e -> e.getUsername().equals(username))
+                .filter(e -> e.getCorreo().equals(username))
                 .findFirst()
                 .orElse(null);
-        //userM.setPassword(new BCryptPasswordEncoder().encode(userM.getPassword()));
+        userM.setPassword(new BCryptPasswordEncoder().encode(userM.getPassword()));
         return new responseDto("Usuario Encontrado", userM, responseDtoEnum.OK);
     }
 
-    public responseDto cambiarContrasena(String username, String nuevaContrasena) {
-        UsuariosModel user = (UsuariosModel) userRepo.findByUsername(username).getRespuesta();
+    public responseDto cambiarContrasena(String correo, String nuevaContrasena) {
+        UsuariosModel user = (UsuariosModel) userRepo.findByCorreo(correo).getRespuesta();
 
         if (user != null) {
             user.setPassword(nuevaContrasena);

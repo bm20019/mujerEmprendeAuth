@@ -2,14 +2,9 @@ package com.emprende.portal.comercio.Models;
 
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,6 +24,10 @@ public class ComerciosModel implements Serializable {
     @Column(name = "id_comercio")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    public ComerciosModel(Long id) {
+        this.id = id;
+    }
 
     @Getter
     @Setter

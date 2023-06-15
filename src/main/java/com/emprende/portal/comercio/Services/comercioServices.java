@@ -9,5 +9,4 @@ public interface comercioServices {
 	public responseDto saveComercios(ComerciosModel comercios);
 	public responseDto getAllComercios();
 	public responseDto getProductosPorComercio(Long comercioId);
-	// public responseDto updateEstado(Comercios comercios, Long codigo);
 }

@@ -1,7 +1,6 @@
 package com.emprende.portal.comercio.Models;
 
 import java.time.LocalDate;
-
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import jakarta.persistence.*;
 import lombok.Getter;

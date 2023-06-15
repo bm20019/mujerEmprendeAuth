@@ -4,7 +4,7 @@ import lombok.Data;
 import java.io.*;
 
 @Data
-public class responseDto<T> implements Serializable {
+public class responseDto implements Serializable {
     private int codigo;
     private String mensaje;
     private Object respuesta;
