@@ -4,11 +4,8 @@ import com.emprende.portal.comercio.Models.ComerciosModel;
 import com.emprende.portal.comercio.Services.comercioServices;
 import com.emprende.portal.comercio.dto.responseDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @RestController
 @RequestMapping("comercio/comercio")
@@ -29,9 +26,8 @@ public class comercioController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/search")
-	public ResponseEntity<List<ComerciosModel>> getAllComercios() {
-		var r = (List<ComerciosModel>)comercio.getAllComercios().getRespuesta();
-		return  new ResponseEntity<>(r, HttpStatusCode.valueOf(200));//new responseDto("Cosnole",new ComerciosModel(), responseDtoEnum.OK);
+	public responseDto getAllComercios() {
+		return comercio.getAllComercios();
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, value = "/update/{codigo}")

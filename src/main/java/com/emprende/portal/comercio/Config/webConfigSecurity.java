@@ -24,6 +24,7 @@ public class webConfigSecurity {
         http.csrf().disable() // (2)
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("/comercio/auth/**").permitAll()
+                        .requestMatchers("/comercio/usuarios/save/**").permitAll()
                         .requestMatchers("/comercio/catalogos/search/**").permitAll()
                         .requestMatchers("/comercio/comercio/search/**").permitAll()
                         .requestMatchers("/comercio/usuarios/search/").hasRole("admin")

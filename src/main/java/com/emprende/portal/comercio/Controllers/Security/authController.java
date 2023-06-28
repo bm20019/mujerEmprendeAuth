@@ -1,7 +1,7 @@
-package com.emprende.portal.comercio.Controllers;
+package com.emprende.portal.comercio.Controllers.Security;
 
-import com.emprende.portal.comercio.Models.TokenInfo;
-import com.emprende.portal.comercio.Models.UsuarioAuthModel;
+import com.emprende.portal.comercio.Models.Security.TokenInfo;
+import com.emprende.portal.comercio.Models.Security.UsuarioAuthModel;
 import com.emprende.portal.comercio.Services.Security.jwtUtilService;
 import com.emprende.portal.comercio.Util.Utils;
 import com.emprende.portal.comercio.dto.responseDto;

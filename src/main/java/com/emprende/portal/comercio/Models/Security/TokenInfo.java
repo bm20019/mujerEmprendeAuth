@@ -1,4 +1,4 @@
-package com.emprende.portal.comercio.Models;
+package com.emprende.portal.comercio.Models.Security;
 
 import lombok.Getter;
 import lombok.Setter;

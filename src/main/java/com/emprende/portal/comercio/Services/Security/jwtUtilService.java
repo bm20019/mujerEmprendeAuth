@@ -15,9 +15,9 @@ import java.util.stream.Collectors;
 
 @Service
 public class jwtUtilService {
-    private static final String JWT_SECRET_KEY = "TODOBIEN";//"TExBVkVfTVVZX1NFQ1JFVEE=";
+    private static final String JWT_SECRET_KEY = "TODOBIEN";
 
-    public static final long JWT_TOKEN_VALIDITY = 1000 * 60 * 60 * (long) 8; // 8 Horas
+    public static final long JWT_TOKEN_VALIDITY = 1000 * 60 * 60 * (long) 8;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
